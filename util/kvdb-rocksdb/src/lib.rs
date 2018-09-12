@@ -20,9 +20,9 @@ extern crate log;
 extern crate elastic_array;
 extern crate interleaved_ordered;
 extern crate num_cpus;
+extern crate parity_rocksdb;
 extern crate parking_lot;
 extern crate regex;
-extern crate rocksdb;
 
 extern crate kvdb;
 extern crate rlp;
@@ -34,6 +34,7 @@ use std::path::{Path, PathBuf};
 use std::{fs, io, mem, result};
 
 use interleaved_ordered::{interleave_ordered, InterleaveOrdered};
+use parity_rocksdb as rocksdb;
 use parking_lot::{Mutex, MutexGuard, RwLock};
 use rocksdb::{
     BlockBasedOptions, Cache, Column, DBIterator, Direction, IteratorMode, Options, ReadOptions, Writable, WriteBatch,
